@@ -42,12 +42,12 @@ Route::controller(AdminController::class)->middleware('auth')->group(function(){
         Route::post('update/password','UpdatePassword')->name('update.password');
 });
 //home slider routes
-Route::controller(HomeSliderController::class)->middleware('auth')->group(function(){
+Route::controller(HomeSliderController::class)->group(function(){
     Route::get('home/slider','HomeSlider')->name('home.slider.edit');
     Route::post('update/slider','UpdateSlider')->name('slider.update');
 });
 //blog category routes
-Route::controller(HomeBlogCategoryController::class)->middleware('auth')->group(function(){
+Route::controller(HomeBlogCategoryController::class)->group(function(){
     Route::get('blog/category/all','AllCategory')->name('all.category');
     Route::get('add/blog/category','AddBlogCategory')->name('add.blog.category');
     Route::post('store/blog/category','StoreBlogCategory')->name('store.blog.category');
@@ -57,7 +57,7 @@ Route::controller(HomeBlogCategoryController::class)->middleware('auth')->group(
 
 });
 //blog routes
-Route::controller(BlogController::class)->middleware('auth')->group(function(){
+Route::controller(BlogController::class)->group(function(){
     Route::get('blog/all','AllBlogs')->name('all.blogs');
     Route::get('blog/','HomeBlog')->name('home.blog');
     Route::get('blog/add','AddBlogs')->name('add.blog');
@@ -71,7 +71,7 @@ Route::controller(BlogController::class)->middleware('auth')->group(function(){
 
 });
 //about slider routes
-Route::controller(AboutController::class)->middleware('auth')->group(function(){
+Route::controller(AboutController::class)->group(function(){
     Route::get('about/slider','AboutSlider')->name('about.edit');
     Route::post('about/update','UpdateAbout')->name('about.update');
     Route::get('/about','About')->name('about');
@@ -87,7 +87,7 @@ Route::controller(AboutController::class)->middleware('auth')->group(function(){
 });
 
 //Portfolio  routes
-Route::controller(PortfolioController::class)->middleware('auth')->group(function(){
+Route::controller(PortfolioController::class)->group(function(){
     Route::get('add/portfolio','AddPortfolio')->name('add.portfolio');
     Route::get('portfolio/all','AllPortfolio')->name('all.portfolio');
     Route::post('store/portfolio','StorePortfolio')->name('store.portfolio');
@@ -98,12 +98,12 @@ Route::controller(PortfolioController::class)->middleware('auth')->group(functio
 
 });
 //Footer  routes
-Route::controller(FooterControlller::class)->middleware('auth')->group(function(){
+Route::controller(FooterControlller::class)->group(function(){
     Route::get('footer/setup','FooterSetup')->name('footer.setup');
     Route::post('footer/update','UpdateFooter')->name('footer.update');
 });
 //Contact  routes
-Route::controller(ContactController::class)->middleware('auth')->group(function(){
+Route::controller(ContactController::class)->group(function(){
     Route::get('/contact','Contact')->name('contact.me');
     Route::post('/store/message','StoreMessage')->name('store.message');
     Route::get('/contact/messages','ContactMessages')->name('contact.message');
